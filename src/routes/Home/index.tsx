@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { decrement, increment } from '../../store/slices/counter.slice';
 
-const Home = function () {
+const Home = () => {
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
   return (
