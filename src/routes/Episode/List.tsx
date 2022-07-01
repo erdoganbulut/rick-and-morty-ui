@@ -6,6 +6,8 @@ import { ERequestStatus } from '../../common/request';
 import EpisodeListItem from '../../components/partials/Episode/ListItem';
 import EpisodesPagination from '../../components/partials/Episode/Pagination';
 
+import './List.scss';
+
 const EpisodeList: FunctionComponent = () => {
   const allEpisodes = useAppSelector((state) => state.episodes.data);
   const allEpisodesStatus = useAppSelector((state) => state.episodes.status);
@@ -27,15 +29,17 @@ const EpisodeList: FunctionComponent = () => {
       {allEpisodesStatus === ERequestStatus.SUCCEEDED && (
         <div className="EpisodeList--list">
           {allEpisodes?.results.map((e) => (
-            <EpisodeListItem
-              id={e.id}
-              name={e.name}
-              air_date={e.air_date}
-              episode={e.episode}
-              characters={e.characters}
-              url=""
-              created=""
-            />
+            <div className="EpisodeList--list__item">
+              <EpisodeListItem
+                id={e.id}
+                name={e.name}
+                air_date={e.air_date}
+                episode={e.episode}
+                characters={e.characters}
+                url=""
+                created=""
+              />
+            </div>
           ))}
         </div>
       )}

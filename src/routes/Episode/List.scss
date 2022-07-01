@@ -1,0 +1,26 @@
+$this: 'EpisodeList';
+
+.#{$this} {
+  &--list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    &__item {
+      width: 100%;
+      padding: 1rem;
+      @media (min-width: 720px) {
+        width: 50%;
+      }
+      @media (min-width: 992px) {
+        width: 33%;
+      }
+      @media (min-width: 1200px) {
+        width: 25%;
+      }
+      @media (min-width: 1600px) {
+        width: 20%;
+      }
+    }
+  }
+}
