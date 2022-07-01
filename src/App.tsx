@@ -19,7 +19,6 @@ const App: FunctionComponent = () => (
           <Breadcrumb.Item>App</Breadcrumb.Item>
         </Breadcrumb>
         <div className="site-layout-content">
-          <p>App Works!</p>
           <Router />
         </div>
       </Content>
