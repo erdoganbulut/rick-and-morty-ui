@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React, { FunctionComponent } from 'react';
 import { Layout, Menu } from 'antd';
 
-const LayoutHeader: FC = () => (
+const LayoutHeader: FunctionComponent = () => (
   <Layout.Header>
     <div className="logo" />
     <Menu

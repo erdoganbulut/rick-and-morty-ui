@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Breadcrumb, Layout } from 'antd';
 import Router from './routes/router';
 import LayoutHeader from './components/partials/App/LayoutHeader/LayoutHeader';
@@ -8,7 +8,7 @@ const { Content, Footer } = Layout;
 // FIXME: inline styles
 // FIXME: breadcrumb
 
-const App = () => (
+const App: FunctionComponent = () => (
   <div className="App">
     <Layout className="layout">
       <LayoutHeader />
