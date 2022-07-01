@@ -3,10 +3,10 @@ import { Spin } from 'antd';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchEpisodeList } from '../../store/slices/episodes.slice';
 import { ERequestStatus } from '../../common/request';
-import EpisodeItem from '../../components/partials/Episode/Item';
+import EpisodeListItem from '../../components/partials/Episode/ListItem';
 import EpisodesPagination from '../../components/partials/Episode/Pagination';
 
-const Episodes: FunctionComponent = () => {
+const EpisodeList: FunctionComponent = () => {
   const allEpisodes = useAppSelector((state) => state.episodes.data);
   const allEpisodesStatus = useAppSelector((state) => state.episodes.status);
   const dispatch = useAppDispatch();
@@ -22,12 +22,12 @@ const Episodes: FunctionComponent = () => {
   }, [dispatch]);
 
   return (
-    <div className="Episodes">
+    <div className="EpisodeList">
       {allEpisodesStatus === ERequestStatus.LOADING && <Spin />}
       {allEpisodesStatus === ERequestStatus.SUCCEEDED && (
-        <div className="episodes--list">
+        <div className="EpisodeList--list">
           {allEpisodes?.results.map((e) => (
-            <EpisodeItem
+            <EpisodeListItem
               id={e.id}
               name={e.name}
               air_date={e.air_date}
@@ -44,4 +44,4 @@ const Episodes: FunctionComponent = () => {
   );
 };
 
-export default Episodes;
+export default EpisodeList;

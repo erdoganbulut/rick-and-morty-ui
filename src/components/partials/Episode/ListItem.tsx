@@ -3,7 +3,7 @@ import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 import { IEpisode } from '../../../store/slices/episodes.slice';
 
-const EpisodeItem: FunctionComponent<IEpisode> = ({
+const EpisodeListItem: FunctionComponent<IEpisode> = ({
   id,
   name,
   air_date,
@@ -16,4 +16,4 @@ const EpisodeItem: FunctionComponent<IEpisode> = ({
   </Card>
 );
 
-export default EpisodeItem;
+export default EpisodeListItem;
