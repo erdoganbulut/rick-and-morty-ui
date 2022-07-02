@@ -10,7 +10,7 @@ const EpisodeListItem: FunctionComponent<IEpisode> = ({
   episode,
   characters,
 }: IEpisode) => (
-  <Card title={`${episode} - ${name}`} extra={<Link to={`/${id}`}>Go to detail</Link>}>
+  <Card title={`${episode} - ${name}`} extra={<Link to={`/episode/${id}`}>Go to detail</Link>}>
     <p>{characters.length} Characters</p>
     <p>{air_date}</p>
   </Card>
