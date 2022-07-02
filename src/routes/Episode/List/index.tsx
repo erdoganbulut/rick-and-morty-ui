@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { Spin } from 'antd';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { fetchEpisodeList } from '../../store/slices/episodes.slice';
-import { ERequestStatus } from '../../common/request';
-import EpisodeListItem from '../../components/partials/Episode/ListItem';
-import EpisodesPagination from '../../components/partials/Episode/Pagination';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
+import { fetchEpisodeList } from '../../../store/slices/episodes.slice';
+import { ERequestStatus } from '../../../common/request';
+import EpisodeListItem from '../../../components/partials/Episode/ListItem';
+import EpisodesPagination from '../../../components/partials/Episode/Pagination';
 
 import './List.scss';
 
