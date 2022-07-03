@@ -73,7 +73,7 @@ export const episodesSlice = createSlice({
       .addCase(fetchEpisodeList.rejected, (state) => {
         const $state = state;
         $state.status = ERequestStatus.FAILED;
-        $state.error = 'Fetch Error'; // FIXME:
+        $state.error = 'Fetch Error';
       })
       // detail
       .addCase(fetchEpisodeDetail.pending, (state) => {
@@ -88,7 +88,7 @@ export const episodesSlice = createSlice({
       .addCase(fetchEpisodeDetail.rejected, (state) => {
         const $state = state;
         $state.status = ERequestStatus.FAILED;
-        $state.error = 'Fetch Error'; // FIXME:
+        $state.error = 'Fetch Error';
       });
   },
 });

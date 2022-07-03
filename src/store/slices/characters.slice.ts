@@ -105,7 +105,7 @@ export const charactersSlice = createSlice({
       .addCase(fetchMultipleCharacters.rejected, (state) => {
         const $state = state;
         $state.status = ERequestStatus.FAILED;
-        $state.error = 'Fetch Error'; // FIXME:
+        $state.error = 'Fetch Error';
       })
       // detail
       .addCase(fetchCharacterDetail.pending, (state) => {
@@ -120,7 +120,7 @@ export const charactersSlice = createSlice({
       .addCase(fetchCharacterDetail.rejected, (state) => {
         const $state = state;
         $state.status = ERequestStatus.FAILED;
-        $state.error = 'Fetch Error'; // FIXME:
+        $state.error = 'Fetch Error';
       });
   },
 });
