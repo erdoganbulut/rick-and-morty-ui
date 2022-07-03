@@ -25,6 +25,7 @@ export interface ICharacter {
 }
 
 interface ICharacterState {
+  character: ICharacter | null;
   characters: ICharacter[];
   filter: {
     status: string | null;
@@ -36,6 +37,7 @@ interface ICharacterState {
 }
 
 const initialState: ICharacterState = {
+  character: null,
   characters: [],
   filter: {
     status: null,
@@ -53,6 +55,16 @@ export const fetchMultipleCharacters = createAsyncThunk(
     await Promise.all(charactersUrlList.map((c) => request.get<ICharacter>(c))).then((values) => {
       response = values;
     });
+    return response;
+  },
+);
+
+export const fetchCharacterDetail = createAsyncThunk(
+  'characters/fetchCharacterDetail',
+  async (id: number) => {
+    const response = await request.get<ICharacter>(
+      `https://rickandmortyapi.com/api/character/${id}`,
+    );
     return response;
   },
 );
@@ -80,6 +92,7 @@ export const charactersSlice = createSlice({
   },
   extraReducers(builder) {
     builder
+      // multiple
       .addCase(fetchMultipleCharacters.pending, (state) => {
         const $state = state;
         $state.status = ERequestStatus.LOADING;
@@ -90,6 +103,21 @@ export const charactersSlice = createSlice({
         $state.characters = action.payload;
       })
       .addCase(fetchMultipleCharacters.rejected, (state) => {
+        const $state = state;
+        $state.status = ERequestStatus.FAILED;
+        $state.error = 'Fetch Error'; // FIXME:
+      })
+      // detail
+      .addCase(fetchCharacterDetail.pending, (state) => {
+        const $state = state;
+        $state.status = ERequestStatus.LOADING;
+      })
+      .addCase(fetchCharacterDetail.fulfilled, (state, action) => {
+        const $state = state;
+        $state.status = ERequestStatus.SUCCEEDED;
+        $state.character = action.payload;
+      })
+      .addCase(fetchCharacterDetail.rejected, (state) => {
         const $state = state;
         $state.status = ERequestStatus.FAILED;
         $state.error = 'Fetch Error'; // FIXME:

@@ -5,6 +5,8 @@ import { Spin } from 'antd';
 const Episode = lazy(() => import('./Episode'));
 const EpisodeList = lazy(() => import('./Episode/List'));
 const EpisodeDetail = lazy(() => import('./Episode/Detail'));
+const Character = lazy(() => import('./Character'));
+const CharacterDetail = lazy(() => import('./Character/Detail'));
 
 const Router: FunctionComponent = () => (
   <Routes>
@@ -30,6 +32,23 @@ const Router: FunctionComponent = () => (
         element={
           <Suspense fallback={<Spin />}>
             <EpisodeDetail />
+          </Suspense>
+        }
+      />
+    </Route>
+    <Route
+      path="/character"
+      element={
+        <Suspense fallback={<Spin />}>
+          <Character />
+        </Suspense>
+      }
+    >
+      <Route
+        path=":characterId"
+        element={
+          <Suspense fallback={<Spin />}>
+            <CharacterDetail />
           </Suspense>
         }
       />

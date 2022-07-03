@@ -6,6 +6,7 @@ $this: 'EpisodeList';
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
+    margin: 0 -1rem;
     &__item {
       width: 100%;
       padding: 1rem;

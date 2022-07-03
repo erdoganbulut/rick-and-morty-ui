@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { Spin } from 'antd';
+import { Link } from 'react-router-dom';
 import { ERequestStatus } from '../../../common/request';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 import {
@@ -44,20 +45,22 @@ const EpisodeDetailCharacterList: FunctionComponent = () => {
           <div className="EpisodeDetailCharacterList--list">
             {characterList.map((c) => (
               <div className="EpisodeDetailCharacterList--list__item">
-                <EpisodeDetailCharacterItem
-                  id={c.id}
-                  name={c.name}
-                  status={c.status}
-                  species={c.species}
-                  type={c.type}
-                  gender={c.gender}
-                  origin={c.origin}
-                  location={c.location}
-                  image={c.image}
-                  episode={c.episode}
-                  url={c.url}
-                  created={c.created}
-                />
+                <Link to={`/character/${c.id}`}>
+                  <EpisodeDetailCharacterItem
+                    id={c.id}
+                    name={c.name}
+                    status={c.status}
+                    species={c.species}
+                    type={c.type}
+                    gender={c.gender}
+                    origin={c.origin}
+                    location={c.location}
+                    image={c.image}
+                    episode={c.episode}
+                    url={c.url}
+                    created={c.created}
+                  />
+                </Link>
               </div>
             ))}
           </div>

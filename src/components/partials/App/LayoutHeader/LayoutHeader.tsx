@@ -14,7 +14,12 @@ const LayoutHeader: FunctionComponent = () => {
     {
       title: 'Episode Detail',
       isInternal: true,
-      to: '/1',
+      to: '/episode/1',
+    },
+    {
+      title: 'Character Detail',
+      isInternal: true,
+      to: '/character/1',
     },
     {
       title: 'Github',
