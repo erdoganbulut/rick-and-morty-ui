@@ -44,7 +44,7 @@ const EpisodeDetailCharacterList: FunctionComponent = () => {
           <EpisodeDetailCharacterFilter />
           <div className="EpisodeDetailCharacterList--list">
             {characterList.map((c) => (
-              <div className="EpisodeDetailCharacterList--list__item">
+              <div className="EpisodeDetailCharacterList--list__item" key={c.id}>
                 <Link to={`/character/${c.id}`}>
                   <EpisodeDetailCharacterItem
                     id={c.id}

@@ -38,7 +38,7 @@ const LayoutHeader: FunctionComponent = () => {
       <div className="logo">Rick and Morty</div>
       <Menu selectable={false} theme="dark" mode="horizontal">
         {menuContent.map((m) => (
-          <Menu.Item>
+          <Menu.Item key={m.title}>
             {m.isInternal ? (
               <Link to={m.to}>{m.title}</Link>
             ) : (

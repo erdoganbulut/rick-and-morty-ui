@@ -29,7 +29,7 @@ const EpisodeList: FunctionComponent = () => {
       {allEpisodesStatus === ERequestStatus.SUCCEEDED && (
         <div className="EpisodeList--list">
           {allEpisodes?.results.map((e) => (
-            <div className="EpisodeList--list__item">
+            <div className="EpisodeList--list__item" key={e.id}>
               <EpisodeListItem
                 id={e.id}
                 name={e.name}
