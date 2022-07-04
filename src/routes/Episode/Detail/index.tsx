@@ -15,7 +15,7 @@ const EpisodeDetail: FunctionComponent = () => {
   }, [dispatch, routerParams.episodeId]);
 
   return (
-    <div className="EpisodeDetail">
+    <div className="EpisodeDetail" data-testid="episode-detail">
       <EpisodeDetailInfo />
       <EpisodeDetailCharacterList />
     </div>

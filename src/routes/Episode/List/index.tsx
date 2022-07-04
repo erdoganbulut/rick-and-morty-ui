@@ -24,7 +24,7 @@ const EpisodeList: FunctionComponent = () => {
   }, [dispatch]);
 
   return (
-    <div className="EpisodeList">
+    <div className="EpisodeList" data-testid="episodelistpage-list">
       {allEpisodesStatus === ERequestStatus.LOADING && <Spin />}
       {allEpisodesStatus === ERequestStatus.SUCCEEDED && (
         <div className="EpisodeList--list">

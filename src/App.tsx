@@ -7,7 +7,7 @@ const { Content, Footer } = Layout;
 
 const App: FunctionComponent = () => (
   <div className="App">
-    <Layout className="layout">
+    <Layout className="layout" data-testid="app-layout-system">
       <LayoutHeader />
       <Content style={{ padding: '0 3rem', marginTop: '3rem' }}>
         <div className="site-layout-content">

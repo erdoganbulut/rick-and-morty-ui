@@ -14,7 +14,7 @@ const CharacterDetail: FunctionComponent = () => {
   }, [dispatch, routerParams.characterId]);
 
   return (
-    <div className="CharacterDetail">
+    <div className="CharacterDetail" data-testid="character-detail">
       <CharacterDetailInfo />
     </div>
   );
